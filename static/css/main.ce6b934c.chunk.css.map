@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/scss/header.module.scss","webpack://src/scss/index.scss"],"names":[],"mappings":"AAAA,oBACE,SAAU,CACV,UAAW,CCFb,EACE,qBAAsB,CACtB,QAAS","file":"main.ce6b934c.chunk.css","sourcesContent":[".logo {\n  width: 2em;\n  height: 2em;\n}\n","* {\n  box-sizing: border-box;\n  margin: 0;\n}\n"]}
