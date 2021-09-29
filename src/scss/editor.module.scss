@@ -1,0 +1,33 @@
+.editor {
+  width: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.editor__frame {
+  width: 100%;
+  height: 30em;
+  & div {
+    width: 25%;
+    min-height: 6.5em;
+    margin: 1rem 0 0 1rem;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+    transform-origin: center !important;
+  }
+}
+.editor__main {
+}
+.editor__pannel {
+}
+.editor__image {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  cursor: grab;
+}

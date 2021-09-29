@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Main } from './components/Main';
+import { Main } from './Main';
 import reportWebVitals from './reportWebVitals';
 import './scss/index.scss';
 

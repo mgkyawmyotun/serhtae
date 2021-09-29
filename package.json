@@ -6,10 +6,15 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/dom-to-image": "^2.6.3",
+    "@types/file-saver": "^2.0.3",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "dom-to-image": "^2.6.0",
+    "file-saver": "^2.0.5",
+    "interactjs": "^1.10.11",
     "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -40,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@interactjs/types": "^1.10.11"
   }
 }
