@@ -49,9 +49,6 @@ function dragabbleText() {
 }
 function dragAndResizeableImage() {
   const node = document.querySelector('.target_image');
-  if (node) {
-    const parent = node.parentElement;
-  }
   interact('.target_image').resizable({
     edges: { top: true, left: true, bottom: true, right: true },
     modifiers: [
