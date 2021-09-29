@@ -24,6 +24,6 @@ jobs:
         env:
           REPO: self
           BRANCH: public # The branch name where you want to push the assets
-          FOLDER: public # The directory where your assets are generated
+          FOLDER: build # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha}) {msg} - စာထည့် " # The commit message
