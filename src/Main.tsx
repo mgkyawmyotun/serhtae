@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React from 'react';
-import { Editor } from './components/Editor';
+import { Editor } from './components/editor/Editor';
 import { Header } from './components/Header';
 import classes from './scss/main.module.scss';
 
