@@ -1,6 +1,5 @@
 import interact from 'interactjs';
 export function dragAndResizeableImage(selector: string) {
-  const node = document.querySelector(selector);
   interact(selector)
     .resizable({
       // resize from all edges and corners

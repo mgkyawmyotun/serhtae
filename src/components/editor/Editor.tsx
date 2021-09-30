@@ -16,7 +16,7 @@ export const Editor: FC = () => {
         <div className={classes.editor__frame} ref={editor_ref}>
           <img
             src="https://source.unsplash.com/random/200x200"
-            alt="Image"
+            alt="Meme Background"
             className={[classes.editor__image__cover, 'target_image'].join(' ')}
           />
           {textData.map((data, index) => (
