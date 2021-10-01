@@ -28,6 +28,9 @@
 .editor__main {
 }
 .editor__pannel {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 .editor__image {
   position: absolute;

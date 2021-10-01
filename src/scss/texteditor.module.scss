@@ -3,3 +3,47 @@
   top: 0;
   left: 0;
 }
+
+.texteditor__pannel {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, max-content);
+  column-gap: 1em;
+  row-gap: 1em;
+  & > .text_field {
+    & > input {
+      width: 100%;
+      font-size: 1.25rem;
+      padding: 0.25em 0.5em;
+      border: 2px solid black;
+      border-radius: 0.25em;
+      margin-top: 0.2em;
+    }
+    & > h1 {
+      font-size: 1rem;
+    }
+  }
+  & > .font_field {
+    & > input[type='number'] {
+      font-size: 1.25rem;
+      padding: 0.25em 0.5em;
+      border: 2px solid black;
+      border-radius: 0.25em;
+      margin-top: 0.2em;
+    }
+    & > h1 {
+      font-size: 1rem;
+    }
+  }
+  & > .text_color {
+    & > h1 {
+      font-size: 1rem;
+    }
+    & > input[type='color'] {
+      margin-top: 0.2em;
+      border: 2px solid black;
+      border-radius: 0.25em;
+    }
+  }
+}
