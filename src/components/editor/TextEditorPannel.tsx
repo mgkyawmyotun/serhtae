@@ -60,8 +60,57 @@ export const TextEditorPannel: FC<TextEditorPannelProps> = ({
           }}
         ></input>
       </div>
+      <div className={classes.bg_color}>
+        <h1>Background Color</h1>
+        <input
+          id="colorPicker"
+          type="color"
+          value={textData[index].color}
+          defaultValue="#0000"
+          onChange={(e) => {
+            setTextData((data) => {
+              const new_data = [...data];
+              new_data[index].bgColor = e.target.value;
+              return new_data;
+            });
+          }}
+        ></input>
+      </div>
+      <div className={classes.font_weight}>
+        <h1>Font Weight</h1>
+        <select
+          onChange={(e) => {
+            setTextData((data) => {
+              const new_data = [...data];
+              new_data[index].fontWeight = +e.target.value;
+              return new_data;
+            });
+          }}
+          defaultValue="400"
+        >
+          <option value="100">Thin</option>
+          <option value="300">Light</option>
+          <option value="400">Regular</option>
+          <option value="500">Medium</option>
+          <option value="700">Bold</option>
+          <option value="900">Black</option>
+        </select>
+      </div>
       <div className={classes.font_style}>
         <h1>Font Style</h1>
+        <select
+          onChange={(e) => {
+            setTextData((data) => {
+              const new_data = [...data];
+              new_data[index].fontStyle = e.target.value;
+              return new_data;
+            });
+          }}
+          defaultValue="normal"
+        >
+          <option value="italic">Italic</option>
+          <option value="normal">Normal</option>
+        </select>
       </div>
     </div>
   );

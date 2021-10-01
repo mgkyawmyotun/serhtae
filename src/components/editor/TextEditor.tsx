@@ -8,6 +8,9 @@ export interface TextEditorType {
   id: number;
   fontSize?: number;
   color?: string;
+  fontWeight?: number;
+  fontStyle?: string;
+  bgColor?: string;
 }
 export const TextEditor: FC<TextEditorType> = ({
   text,
@@ -15,6 +18,9 @@ export const TextEditor: FC<TextEditorType> = ({
   id,
   fontSize,
   color,
+  fontWeight,
+  fontStyle,
+  bgColor,
 }) => {
   useEffect(() => {
     dragabbleText('#text_editor');
@@ -27,9 +33,18 @@ export const TextEditor: FC<TextEditorType> = ({
       onClick={() => {
         if (onGetPick) onGetPick(id);
       }}
-      style={{ fontSize: fontSize && fontSize + 'px', color: color }}
     >
-      {text}
+      <h1
+        style={{
+          fontSize: fontSize ? fontSize + 'px' : '20px',
+          color: color,
+          fontWeight: fontWeight ? fontWeight : 400,
+          fontStyle: fontStyle ? fontStyle : 'revert',
+          background: bgColor ? bgColor : 'transparent',
+        }}
+      >
+        {text}
+      </h1>
     </div>
   );
 };

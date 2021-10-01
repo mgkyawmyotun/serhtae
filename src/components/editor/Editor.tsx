@@ -7,7 +7,7 @@ import { TextEditorPannel } from './TextEditorPannel';
 type PickedItem = { index: number; type: 'img' | 'text' };
 export type TextDataType = Pick<
   TextEditorType,
-  'text' | 'fontSize' | 'color'
+  'text' | 'fontSize' | 'color' | 'fontWeight' | 'fontStyle' | 'bgColor'
 >[];
 export const Editor: FC = () => {
   const editor_ref = useRef<HTMLDivElement>(null);
@@ -33,6 +33,9 @@ export const Editor: FC = () => {
               }}
               fontSize={data.fontSize}
               color={data.color}
+              fontWeight={data.fontWeight}
+              fontStyle={data.fontStyle}
+              bgColor={data.bgColor}
             />
           ))}
           {imageData.map((data, index) => (
@@ -59,7 +62,7 @@ export const Editor: FC = () => {
           onClick={() => {
             setTextData((data) => [
               ...data,
-              { text: 'new ', fontSize: 20, color: '#000000' },
+              { text: 'text is here', fontSize: 20, color: '#000000' },
             ]);
           }}
         >
