@@ -3,9 +3,10 @@
   top: 0;
   left: 0;
   font-family: 'Roboto', sans-serif;
-  overflow-wrap: break-word;
-  overflow: hidden;
+
   margin: 0;
+  overflow-wrap: break-word;
+  max-width: 20em;
 }
 
 .texteditor__pannel {

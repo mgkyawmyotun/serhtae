@@ -4,8 +4,7 @@ import { dragabbleText } from '../../utils';
 
 export interface TextEditorType {
   text: string;
-  onGetPick?: (id: number) => void;
-  id: number;
+  onGetPick?: () => void;
   fontSize?: number;
   color?: string;
   fontWeight?: number;
@@ -15,7 +14,6 @@ export interface TextEditorType {
 export const TextEditor: FC<TextEditorType> = ({
   text,
   onGetPick,
-  id,
   fontSize,
   color,
   fontWeight,
@@ -31,7 +29,7 @@ export const TextEditor: FC<TextEditorType> = ({
       className={classes.texteditor}
       id="text_editor"
       onClick={() => {
-        if (onGetPick) onGetPick(id);
+        if (onGetPick) onGetPick();
       }}
     >
       <h1

@@ -13,13 +13,6 @@
   height: 30em;
   border: 2px dotted rgb(0, 0, 0);
   background-color: #ffffff;
-
-  & div {
-    width: max-content;
-    color: rgb(0, 0, 0);
-    touch-action: none;
-    user-select: none;
-  }
 }
 .editor__image__cover {
   width: 100%;
@@ -46,6 +39,39 @@
   align-items: flex-start;
   & > button {
     cursor: pointer;
-    padding: 1em 4em;
+    padding: 1em 2em;
+    font-size: 1rem;
+  }
+  & > input {
+    color: transparent;
+    width: 12em;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &::before {
+      content: 'Add Image';
+      color: black;
+      display: inline-block;
+      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+      border: 1px solid #999;
+      border-radius: 3px;
+      padding: 1em 2em;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      text-shadow: 1px 1px #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    &:hover::before {
+      border-color: black;
+    }
+    &:active {
+      outline: 0;
+    }
+    &:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
   }
 }

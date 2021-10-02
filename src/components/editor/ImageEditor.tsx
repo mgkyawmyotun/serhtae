@@ -4,8 +4,9 @@ import { dragAndResizeableImage } from '../../utils';
 
 export interface ImageEditorProps {
   imgPath?: string;
+  onGetPicked: () => void;
 }
-export const ImageEditor: FC<ImageEditorProps> = ({ imgPath }) => {
+export const ImageEditor: FC<ImageEditorProps> = ({ imgPath, onGetPicked }) => {
   useEffect(() => {
     dragAndResizeableImage('#new_image');
   }, []);
@@ -16,6 +17,7 @@ export const ImageEditor: FC<ImageEditorProps> = ({ imgPath }) => {
         alt=""
         id="new_image"
         className={classes.image_editor}
+        onClick={onGetPicked}
       />
     </>
   );

@@ -1,5 +1,47 @@
 .image_editor {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10em;
+  height: 10em;
+}
+.image_editor_pannel {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, max-content);
+  column-gap: 1em;
+  row-gap: 1em;
+  & > input {
+    color: transparent;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &::before {
+      content: 'Replace Image';
+      color: black;
+      display: inline-block;
+      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+      border: 1px solid #999;
+      border-radius: 3px;
+      padding: 0.5em 0.5em;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      text-shadow: 1px 1px #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+    &:hover::before {
+      border-color: black;
+    }
+    &:active {
+      outline: 0;
+    }
+    &:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+  }
 }
