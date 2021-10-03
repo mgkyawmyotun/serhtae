@@ -47,6 +47,24 @@
       background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
     }
   }
+  & > button {
+    grid-column: span 2;
+    align-self: center;
+    justify-self: center;
+    padding: 0.5em 4em;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    border-radius: 0.25em;
+    border: 2px solid hsl(340, 97%, 56%);
+    &:hover {
+      padding: 0.58em 4.125em;
+      color: #ffffff;
+
+      background: hsl(340, 97%, 56%);
+    }
+  }
   & > div {
     display: flex;
     justify-content: space-evenly;

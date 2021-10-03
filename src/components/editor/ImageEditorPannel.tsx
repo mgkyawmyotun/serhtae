@@ -51,6 +51,18 @@ export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
           Move To Front
         </button>
       </div>
+      <button
+        onClick={() => {
+          setImageData((data) => {
+            const new_data = data.filter((da, idx) => idx !== index);
+            console.log(index);
+            console.log(new_data);
+            return new_data;
+          });
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };
