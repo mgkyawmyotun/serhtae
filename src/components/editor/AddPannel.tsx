@@ -49,7 +49,7 @@ export const AddPannel: FC<AddPannelProps> = ({
             setImageData((data) => {
               const new_data = [...data, { imgPath: img_url }];
 
-              setPickedItem({ index: new_data.length - 1, type: 'text' });
+              setPickedItem({ index: new_data.length - 1, type: 'img' });
               return new_data;
             });
           }
