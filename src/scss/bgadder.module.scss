@@ -1,0 +1,51 @@
+.bg_adder {
+  display: flex;
+  justify-content: center;
+  & > input {
+    color: transparent;
+    width: 12em;
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    &::before {
+      content: 'Add Image';
+      color: black;
+      display: inline-block;
+      background: transparent;
+      border: 4px dotted black;
+
+      padding: 0.5em 1em;
+      outline: none;
+      cursor: pointer;
+      transition-property: background-color color;
+      transition-duration: 200ms;
+    }
+    &:hover::before {
+      background-color: black;
+      color: white;
+      border: 4px dotted white;
+      transition-property: background-color color;
+      transition-duration: 500ms;
+    }
+  }
+  & > button {
+    padding: 0.5em 1em;
+    background-color: transparent;
+    border: 4px dotted black;
+    cursor: pointer;
+
+    transition-property: background-color color;
+    transition-duration: 200ms;
+    &:hover {
+      background-color: black;
+      color: white;
+      border: 4px dotted white;
+      transition-property: background-color color;
+      transition-duration: 500ms;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

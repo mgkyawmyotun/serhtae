@@ -4,10 +4,12 @@ import { ImageDataType } from './Editor';
 interface ImageEditorPannelProps {
   setImageData: React.Dispatch<React.SetStateAction<ImageDataType>>;
   index: number;
+  setIsBack: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
   setImageData,
   index,
+  setIsBack,
 }) => {
   const input_ref = useRef<HTMLInputElement>(null);
   return (
@@ -19,6 +21,11 @@ export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
         onInput={(e) => {
           if (input_ref && input_ref.current && input_ref.current.files) {
             const file = input_ref.current.files[0];
+
+            if (!file) {
+              return;
+            }
+
             const img_url = URL.createObjectURL(file);
             setImageData((data) => {
               const new_data = [...data];
@@ -28,6 +35,22 @@ export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
           }
         }}
       />
+      <div>
+        <button
+          onClick={() => {
+            setIsBack(true);
+          }}
+        >
+          Move To Back
+        </button>
+        <button
+          onClick={() => {
+            setIsBack(false);
+          }}
+        >
+          Move To Front
+        </button>
+      </div>
     </div>
   );
 };

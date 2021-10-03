@@ -5,6 +5,13 @@
   transform: translate(-50%, -50%);
   width: 10em;
   height: 10em;
+  z-index: 9;
+}
+.move_back {
+  z-index: 11;
+}
+.move_front {
+  z-index: 9;
 }
 .image_editor_pannel {
   display: grid;
@@ -22,26 +29,39 @@
       content: 'Replace Image';
       color: black;
       display: inline-block;
-      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-      border: 1px solid #999;
-      border-radius: 3px;
-      padding: 0.5em 0.5em;
+      background: transparent;
+      border: 2px solid black;
+      padding: 0.5em 1em;
       outline: none;
-      white-space: nowrap;
-      -webkit-user-select: none;
       cursor: pointer;
-      text-shadow: 1px 1px #fff;
-      font-weight: 700;
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
     &:hover::before {
-      border-color: black;
+      background-color: black;
+      color: white;
     }
     &:active {
       outline: 0;
     }
     &:active::before {
       background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+  }
+  & > div {
+    display: flex;
+    justify-content: space-evenly;
+    & > button {
+      padding: 0.5em 1em;
+      font-size: 1rem;
+
+      background: transparent;
+      border: 2px solid black;
+      cursor: pointer;
+      width: max-content;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
     }
   }
 }

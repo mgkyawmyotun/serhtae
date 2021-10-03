@@ -1,6 +1,7 @@
 import React, { FC, useRef, useState } from 'react';
 import classes from '../../scss/editor.module.scss';
 import { AddPannel } from './AddPannel';
+import { BgImageAdder } from './BgImageAdder';
 import { Generator } from './Generator';
 import { ImageEditor, ImageEditorProps } from './ImageEditor';
 import { ImageEditorPannel } from './ImageEditorPannel';
@@ -17,15 +18,27 @@ export const Editor: FC = () => {
   const [textData, setTextData] = useState<TextDataType>([]);
   const [imageData, setImageData] = useState<ImageDataType>([]);
   const [pickedItem, setPickedItem] = useState<PickedItem>();
+  const [bgImage, setBgImage] = useState<string>();
+  const [isBack, setIsBack] = useState<boolean>(false);
   return (
     <div className={classes.editor}>
       <div className={classes.editor__main}>
-        <div className={classes.editor__frame} ref={editor_ref}>
-          <img
-            src="https://source.unsplash.com/random/200x200"
-            alt="Meme Background"
-            className={[classes.editor__image__cover, 'target_image'].join(' ')}
-          />
+        <div
+          className={`${classes.editor__frame} ${
+            !bgImage ? classes.with_bg : ''
+          }`}
+          ref={editor_ref}
+        >
+          {!bgImage && <BgImageAdder setBgImage={setBgImage} />}
+          {bgImage && (
+            <img
+              src={bgImage}
+              alt="Meme Background"
+              className={[classes.editor__image__cover, 'target_image'].join(
+                ' '
+              )}
+            />
+          )}
           {textData.map((data, index) => (
             <TextEditor
               text={data.text}
@@ -47,6 +60,7 @@ export const Editor: FC = () => {
               onGetPicked={() => {
                 setPickedItem({ index, type: 'img' });
               }}
+              isBack={isBack}
             />
           ))}
         </div>
@@ -64,6 +78,7 @@ export const Editor: FC = () => {
             <ImageEditorPannel
               setImageData={setImageData}
               index={pickedItem.index}
+              setIsBack={setIsBack}
             />
           )
         )}
