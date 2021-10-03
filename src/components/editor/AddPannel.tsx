@@ -29,7 +29,7 @@ export const AddPannel: FC<AddPannelProps> = ({
             return new_data;
           });
         }}
-        disabled
+        disabled={disabled}
       >
         Add Text
       </button>
@@ -41,8 +41,17 @@ export const AddPannel: FC<AddPannelProps> = ({
         onInput={(e) => {
           if (input_ref && input_ref.current && input_ref.current.files) {
             const file = input_ref.current.files[0];
+            if (!file) {
+              return;
+            }
             const img_url = URL.createObjectURL(file);
-            setImageData((data) => [...data, { imgPath: img_url }]);
+            input_ref.current.value = '';
+            setImageData((data) => {
+              const new_data = [...data, { imgPath: img_url }];
+
+              setPickedItem({ index: new_data.length - 1, type: 'text' });
+              return new_data;
+            });
           }
         }}
       />

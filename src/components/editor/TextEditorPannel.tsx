@@ -112,6 +112,16 @@ export const TextEditorPannel: FC<TextEditorPannelProps> = ({
           <option value="normal">Normal</option>
         </select>
       </div>
+      <button
+        onClick={() => {
+          setTextData((data) => {
+            const new_data = data.filter((da, idx) => idx !== index);
+            return new_data;
+          });
+        }}
+      >
+        Delete
+      </button>
     </div>
   );
 };

@@ -18,8 +18,10 @@ export const BgImageAdder: FC<BgImageAdderProps> = ({ setBgImage }) => {
             if (!file) {
               return;
             }
+            input_ref.current.value = '';
             const img_url = URL.createObjectURL(file);
-            setBgImage(img_url);
+
+            setBgImage(() => img_url);
           }
         }}
       />

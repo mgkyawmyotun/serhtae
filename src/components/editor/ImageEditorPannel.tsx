@@ -26,6 +26,7 @@ export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
               return;
             }
 
+            input_ref.current.value = '';
             const img_url = URL.createObjectURL(file);
             setImageData((data) => {
               const new_data = [...data];
@@ -55,8 +56,6 @@ export const ImageEditorPannel: FC<ImageEditorPannelProps> = ({
         onClick={() => {
           setImageData((data) => {
             const new_data = data.filter((da, idx) => idx !== index);
-            console.log(index);
-            console.log(new_data);
             return new_data;
           });
         }}

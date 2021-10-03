@@ -67,21 +67,22 @@ export const Editor: FC = () => {
       </div>
 
       <div className={classes.editor__pannel}>
-        {pickedItem && pickedItem.type === 'text' ? (
-          <TextEditorPannel
-            textData={textData}
-            setTextData={setTextData}
-            index={pickedItem.index}
-          />
-        ) : (
-          pickedItem && (
-            <ImageEditorPannel
-              setImageData={setImageData}
-              index={pickedItem.index}
-              setIsBack={setIsBack}
-            />
-          )
-        )}
+        {pickedItem && pickedItem.type === 'text'
+          ? textData.length > 0 && (
+              <TextEditorPannel
+                textData={textData}
+                setTextData={setTextData}
+                index={pickedItem.index}
+              />
+            )
+          : pickedItem &&
+            imageData.length > 0 && (
+              <ImageEditorPannel
+                setImageData={setImageData}
+                index={pickedItem.index}
+                setIsBack={setIsBack}
+              />
+            )}
 
         <Generator ref_element={editor_ref} />
       </div>
