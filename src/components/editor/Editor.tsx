@@ -89,6 +89,7 @@ export const Editor: FC = () => {
         setImageData={setImageData}
         setTextData={setTextData}
         setPickedItem={setPickedItem}
+        disabled={!bgImage}
       />
     </div>
   );

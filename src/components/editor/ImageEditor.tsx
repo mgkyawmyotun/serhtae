@@ -21,10 +21,9 @@ export const ImageEditor: FC<ImageEditorProps> = ({
         src={imgPath}
         alt=""
         id="new_image"
-        className={`${classes.image_editor} ${
-          isBack ? classes.move_front : classes.move_back
-        }`}
+        className={`${classes.image_editor}`}
         onClick={onGetPicked}
+        style={{ zIndex: isBack ? 9 : 11 }}
       />
     </>
   );

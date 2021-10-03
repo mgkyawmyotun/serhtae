@@ -45,32 +45,45 @@
   align-items: flex-start;
   & > button {
     cursor: pointer;
-    padding: 1em 2em;
+    padding: 0.5em 2em;
     font-size: 1rem;
+    background: transparent;
+    color: black;
+    border: 2px solid black;
+    &:hover {
+      background: black;
+      border: 2px solid white;
+      color: white;
+    }
+    &.disabled {
+      cursor: not-allowed;
+    }
   }
   & > input {
-    color: transparent;
     width: 12em;
+    color: transparent;
     &::-webkit-file-upload-button {
       visibility: hidden;
+    }
+    &.disabled::before {
+      cursor: not-allowed;
     }
     &::before {
       content: 'Add Image';
       color: black;
       display: inline-block;
-      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-      border: 1px solid #999;
-      border-radius: 3px;
-      padding: 1em 2em;
+      background: transparent;
+      border: 2px solid #000;
+      padding: 0.5em 2em;
       outline: none;
-      white-space: nowrap;
       cursor: pointer;
-      text-shadow: 1px 1px #fff;
       font-weight: 700;
       font-size: 1rem;
     }
     &:hover::before {
-      border-color: black;
+      background: black;
+      border: 2px solid white;
+      color: white;
     }
     &:active {
       outline: 0;

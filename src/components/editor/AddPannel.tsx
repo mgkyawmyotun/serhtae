@@ -6,16 +6,19 @@ interface AddPannelProps {
   setTextData: React.Dispatch<React.SetStateAction<TextDataType>>;
   setImageData: React.Dispatch<React.SetStateAction<ImageDataType>>;
   setPickedItem: React.Dispatch<React.SetStateAction<PickedItem | undefined>>;
+  disabled: boolean;
 }
 export const AddPannel: FC<AddPannelProps> = ({
   setTextData,
   setImageData,
   setPickedItem,
+  disabled,
 }) => {
   const input_ref = useRef<HTMLInputElement>(null);
   return (
     <div className={classes.editor__create}>
       <button
+        className={disabled ? classes.disabled : ''}
         onClick={() => {
           setTextData((data) => {
             const new_data = [
@@ -26,11 +29,13 @@ export const AddPannel: FC<AddPannelProps> = ({
             return new_data;
           });
         }}
+        disabled
       >
         Add Text
       </button>
       <input
-        // data-text="Pick Your Image"
+        className={disabled ? classes.disabled : ''}
+        disabled={disabled}
         type="file"
         ref={input_ref}
         onInput={(e) => {
