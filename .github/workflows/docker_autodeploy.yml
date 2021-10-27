@@ -2,7 +2,6 @@ name: serhtae docker auto build to docker hub
 on:
   push:
     branches: [main]
-    paths: /**
 
 jobs:
   build:
