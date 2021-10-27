@@ -7,11 +7,10 @@
 <p align="center"> Web base photo/text inserter to make meme/add text easily with great interface </p>
 
 <p align="center">
-
-![GitHub branch checks state](https://img.shields.io/github/checks-status/mgkyawmyotun/serhtae/main)
-![GitHub pull request check contexts](https://img.shields.io/github/status/contexts/pulls/mgkyawmyotun/serhtae/1)
-![GitHub language count](https://img.shields.io/github/languages/count/mgkyawmyotun/serhtae)
-
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/mgkyawmyotun/serhtae">
+<img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/mgkyawmyotun/serhtae/main">
+<img alt="Docker Image Size (latest by date)" src="https://img.shields.io/docker/image-size/kyawmyotun/serhtae">
+<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/mgkyawmyotun/serhtae">
 </p>
 
 ## Overview
