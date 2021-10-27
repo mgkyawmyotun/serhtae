@@ -6,7 +6,9 @@
 </p>
 <p align="center"> Web base photo/text inserter to make meme/add text easily with great interface </p>
 
-
+![GitHub branch checks state](https://img.shields.io/github/checks-status/mgkyawmyotun/serhtae/main)
+![GitHub pull request check contexts](https://img.shields.io/github/status/contexts/pulls/mgkyawmyotun/serhtae/1)
+![GitHub language count](https://img.shields.io/github/languages/count/mgkyawmyotun/serhtae?style=for-the-badge)
 ## Overview
 Serhtae small lightweight web-based image editor that allowed you to add text and images, customize font size and background. Can be generated as a png File.
 ## Use Of Tech 
